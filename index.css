@@ -1,0 +1,63 @@
+body {
+    margin: 0; 
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+main {
+    width: 120%;
+    height: 100vh;
+    background: url(bg.jpg);
+    /* background-color: rgb(224, 100, 100); */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transform: translateX(-5%);
+}
+
+@media screen and (max-width:1200px){
+    main{
+        width: 120%;
+        height: 100vh;
+        background: url(bg-mobile.jpg);
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        transform: translateX(-5%);
+    }
+}
+
+main span{
+    display: inline-flex;
+    width: 9.7vw;
+    height: 5vh;
+    background: rgb(223, 223, 223);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+}
+main span.fall{
+    z-index: 10;
+    background: #f00;
+    transition: 0.2s;
+    pointer-events: none;
+    animation: fall 2s linear forwards;
+}
+
+@keyframes fall {
+    0%{
+        transform: translateY(0) rotate(0deg);
+    }
+    10%{
+        transform: translateY(5px) rotate(10deg);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(1500px) rotate(100deg);
+        opacity: 0;
+    }
+}
